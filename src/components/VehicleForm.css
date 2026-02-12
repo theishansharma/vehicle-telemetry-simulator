@@ -1,0 +1,136 @@
+.vehicle-row {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.add-vehicle-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #646cff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-vehicle-btn:hover {
+  background: #535bf2;
+}
+
+.delete-vehicle-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-vehicle-btn:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.delete-vehicle-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field-with-action {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.random-battery-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #17a2b8;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.random-battery-btn:hover {
+  background: #138496;
+}
+
+.random-latlng-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.random-latlng-btn:hover {
+  background: #218838;
+}
+
+.send-row {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.send-command-btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.send-command-btn:hover {
+  background: #000;
+}
+
+.field {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-weight: 500;
+  color: #333;
+}
+
+.field select {
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 1rem;
+  min-width: 12rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.field input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  min-width: 6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

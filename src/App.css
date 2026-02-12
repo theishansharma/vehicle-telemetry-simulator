@@ -1,0 +1,15 @@
+.app {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.app h1 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.app p {
+  color: #666;
+}
