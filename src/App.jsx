@@ -4,15 +4,16 @@ import { useLogs } from './hooks/useLogs'
 import VehicleForm from './components/VehicleForm'
 import Logs from './components/Logs'
 
-function App() {
+const App = () => {
   const form = useVehicleForm()
   const { logs, addLog, clearLogs, formatCommandEntry } = useLogs()
 
-  function sendCommand() {
+  const sendCommand = () => {
     const entry = formatCommandEntry({
       vehicleId: form.vehicleId,
       batteryPercent: form.batteryPercent,
       batteryCharging: form.batteryCharging,
+      speed: form.speed,
       latitude: form.latitude,
       longitude: form.longitude,
     })

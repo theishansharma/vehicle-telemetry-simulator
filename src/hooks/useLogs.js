@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function formatCommandEntry(data) {
+export const formatCommandEntry = (data) => {
   const dateTime = new Date().toLocaleString(undefined, {
     dateStyle: 'short',
     timeStyle: 'medium',
@@ -8,19 +8,20 @@ export function formatCommandEntry(data) {
   const vehicleId = data.vehicleId ?? '-'
   const batteryPercent = data.batteryPercent ?? '-'
   const batteryCharging = data.batteryCharging ?? '-'
+  const speed = data.speed ?? '-'
   const latitude = data.latitude ?? '-'
   const longitude = data.longitude ?? '-'
-  return `[${dateTime}] vehicleId=${vehicleId} battery=${batteryPercent}% ${batteryCharging} lat=${latitude} lng=${longitude}`
+  return `[${dateTime}] vehicleId=${vehicleId} battery=${batteryPercent}% batteryCharging=${batteryCharging === 'charging' ? true : false} speed=${speed} lat=${latitude} lng=${longitude}`
 }
 
-export function useLogs() {
+export const useLogs = () => {
   const [logs, setLogs] = useState([])
 
-  function addLog(text) {
+  const addLog = (text) => {
     setLogs((prev) => [...prev, text])
   }
 
-  function clearLogs() {
+  const clearLogs = () => {
     setLogs([])
   }
 

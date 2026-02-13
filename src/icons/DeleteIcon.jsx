@@ -1,6 +1,5 @@
-function TrashIcon({ width = 16, height = 16 }) {
-  return (
-    <svg
+const TrashIcon = ({ width = 16, height = 16 }) => (
+  <svg
       width={width}
       height={height}
       viewBox="0 0 24 24"
@@ -15,7 +14,6 @@ function TrashIcon({ width = 16, height = 16 }) {
       <line x1="10" y1="11" x2="10" y2="17" />
       <line x1="14" y1="11" x2="14" y2="17" />
     </svg>
-  )
-}
+)
 
 export default TrashIcon

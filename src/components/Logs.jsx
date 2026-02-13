@@ -6,7 +6,7 @@ import TrashIcon from '../icons/DeleteIcon'
  * Logs display: shows an array of log lines with auto-scroll to bottom.
  * @param {{ logs: string[], onClear: () => void }} props
  */
-function Logs({ logs, onClear }) {
+const Logs = ({ logs, onClear }) => {
   const logOutputRef = useRef(null)
 
   useEffect(() => {

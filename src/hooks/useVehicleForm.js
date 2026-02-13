@@ -9,40 +9,50 @@ const INITIAL_VEHICLES = [
 /**
  * Hook for vehicle form state and all form-related handlers.
  */
-export function useVehicleForm() {
+export const useVehicleForm = () => {
   const [vehicleId, setVehicleId] = useState('')
   const [vehicles, setVehicles] = useState(INITIAL_VEHICLES)
   const [batteryPercent, setBatteryPercent] = useState('')
   const [batteryCharging, setBatteryCharging] = useState('not_charging')
   const [latitude, setLatitude] = useState('')
   const [longitude, setLongitude] = useState('')
+  const [speed, setSpeed] = useState('')
 
-  function handleBatteryChange(e) {
+  const handleBatteryChange = (e) => {
     const v = e.target.value
     if (v === '' || /^\d*\.?\d{0,2}$/.test(v)) setBatteryPercent(v)
   }
 
-  function addVehicle() {
+  const addVehicle = () => {
     const nextNum = vehicles.length + 1
     const id = 'V' + String(nextNum).padStart(3, '0')
     setVehicles((prev) => [...prev, { value: id, label: id }])
     setVehicleId(id)
   }
 
-  function deleteVehicle() {
+  const deleteVehicle = () => {
     if (!vehicleId) return
     setVehicles((prev) => prev.filter((v) => v.value !== vehicleId))
     setVehicleId('')
   }
 
-  function randomLatLng() {
+  const handleSpeedChange = (e) => {
+    const v = e.target.value
+    if (v === '' || /^\d*$/.test(v)) setSpeed(v)
+  }
+
+  const randomSpeed = () => {
+    setSpeed(String(Math.floor(Math.random() * 121)))
+  }
+
+  const randomLatLng = () => {
     const lat = (Math.random() * 180 - 90).toFixed(6)
     const lng = (Math.random() * 360 - 180).toFixed(6)
     setLatitude(lat)
     setLongitude(lng)
   }
 
-  function randomBattery() {
+  const randomBattery = () => {
     setBatteryPercent((Math.random() * 100).toFixed(2))
   }
 
@@ -58,6 +68,10 @@ export function useVehicleForm() {
     setLatitude,
     longitude,
     setLongitude,
+    speed,
+    setSpeed,
+    handleSpeedChange,
+    randomSpeed,
     addVehicle,
     deleteVehicle,
     randomLatLng,

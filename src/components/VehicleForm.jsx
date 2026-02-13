@@ -1,7 +1,6 @@
 import './VehicleForm.css'
 
-function VehicleForm({ form, onSendCommand }) {
-  return (
+const VehicleForm = ({ form, onSendCommand }) => (
     <>
       <div className="vehicle-row">
         <div className="button-group">
@@ -65,6 +64,26 @@ function VehicleForm({ form, onSendCommand }) {
         </div>
       </div>
       <div className="vehicle-row">
+        <div className="field-with-action">
+          <div className="field">
+            <label htmlFor="speed">Speed</label>
+            <input
+              id="speed"
+              type="text"
+              inputMode="numeric"
+              placeholder="0"
+              value={form.speed}
+              onChange={form.handleSpeedChange}
+            />
+          </div>
+          <button
+            type="button"
+            className="random-speed-btn"
+            onClick={form.randomSpeed}
+          >
+            Random speed
+          </button>
+        </div>
         <div className="field">
           <label htmlFor="latitude">Latitude</label>
           <input
@@ -102,6 +121,5 @@ function VehicleForm({ form, onSendCommand }) {
       </div>
     </>
   )
-}
 
 export default VehicleForm
